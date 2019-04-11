@@ -1,0 +1,12 @@
+<ul>
+  <li *ngFor="let link of (navigationLinks$ | async)">
+    <a [routerLink]="link.path" routerLinkActive="highlight">{{ link.text }}</a>
+    <ul>
+      <li *ngFor="let childLink of link.children">
+        <a [routerLink]="childLink.path" routerLinkActive="highlight">{{
+          childLink.text
+        }}</a>
+      </li>
+    </ul>
+  </li>
+</ul>
